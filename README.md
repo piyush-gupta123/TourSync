@@ -1,4 +1,4 @@
-#TourSync
+**TourSync**
 
 This is a comprehensive Travel and Tourism Management System built with Java and Swing, designed to streamline the booking and management process for travel packages and hotel reservations. The application includes the following key features:
 
