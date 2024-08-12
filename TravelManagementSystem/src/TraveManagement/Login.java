@@ -20,7 +20,7 @@ public class Login extends JFrame implements ActionListener {
 		p1.setBounds(0, 0, 400, 400);
 		p1.setLayout(null);
 		add(p1);
-		ImageIcon i1 = new ImageIcon("E:/Workspace/TravelManagementSystem/src/icons/login.png");
+		ImageIcon i1 = new ImageIcon("E:/Workspace/TourSync/TravelManagementSystem/src/icons/login.png");
 		Image img = i1.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT);
 		ImageIcon i3 = new ImageIcon(img);
 		JLabel image = new JLabel(i3);

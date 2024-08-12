@@ -15,7 +15,7 @@ public class ForgetPassword extends JFrame implements ActionListener {
 		setLayout(null);
 		getContentPane().setBackground(Color.WHITE);
 
-		ImageIcon i1 = new ImageIcon("E:/Workspace/TravelManagementSystem/src/icons/forgotpassword.jpg");
+		ImageIcon i1 = new ImageIcon("E:/Workspace/TourSync/TravelManagementSystem/src/icons/forgotpassword.jpg");
 		Image i2 = i1.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT);
 		ImageIcon i3 = new ImageIcon(i2);
 		JLabel img = new JLabel(i3);

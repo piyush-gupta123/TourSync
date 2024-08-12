@@ -90,7 +90,7 @@ public class SignUp extends JFrame implements ActionListener {
 		back.addActionListener(this);
 		p1.add(back);
 
-		ImageIcon i1 = new ImageIcon("E:/Workspace/TravelManagementSystem/src/icons/signUp.jpg");
+		ImageIcon i1 = new ImageIcon("E:/Workspace/TourSync/TravelManagementSystem/src/icons/signUp.jpg");
 		Image img = i1.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT);
 		ImageIcon i3 = new ImageIcon(img);
 		JLabel image = new JLabel(i3);

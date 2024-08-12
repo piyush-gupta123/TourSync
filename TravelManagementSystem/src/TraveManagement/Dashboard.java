@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class Dashboard extends JFrame implements ActionListener {
 	String username;
-	JButton addPersonalDetails, viewPersonalDetails;
+	JButton addPersonalDetails, viewPersonalDetails, updatePersonalDetails, checkPackages;
 
 	Dashboard(String username) {
 		this.username = username;
@@ -19,7 +19,7 @@ public class Dashboard extends JFrame implements ActionListener {
 		p1.setBounds(0, 0, 1600, 60);
 		add(p1);
 
-		ImageIcon i1 = new ImageIcon("E:/Workspace/TravelManagementSystem/src/icons/dashboard.png");
+		ImageIcon i1 = new ImageIcon("E:/Workspace/TourSync/TravelManagementSystem/src/icons/dashboard.png");
 		Image i2 = i1.getImage().getScaledInstance(70, 70, Image.SCALE_DEFAULT);
 		ImageIcon i3 = new ImageIcon(i2);
 		JLabel icon = new JLabel(i3);
@@ -47,12 +47,13 @@ public class Dashboard extends JFrame implements ActionListener {
 		addPersonalDetails.addActionListener(this);
 		p2.add(addPersonalDetails);
 
-		JButton updatePersonalDetails = new JButton("Update Personal Details");
+		updatePersonalDetails = new JButton("Update Personal Details");
 		updatePersonalDetails.setBounds(0, 50, 300, 50);
 		updatePersonalDetails.setBackground(new Color(0, 0, 102));
 		updatePersonalDetails.setForeground(Color.WHITE);
 		updatePersonalDetails.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		updatePersonalDetails.setMargin(new Insets(0, 0, 0, 30));
+		updatePersonalDetails.addActionListener(this);
 		p2.add(updatePersonalDetails);
 
 		viewPersonalDetails = new JButton("View Details");
@@ -72,11 +73,12 @@ public class Dashboard extends JFrame implements ActionListener {
 		deletePersonalDetails.setMargin(new Insets(0, 0, 0, 40));
 		p2.add(deletePersonalDetails);
 
-		JButton checkPackages = new JButton("Check Packages");
+		checkPackages = new JButton("Check Packages");
 		checkPackages.setBounds(0, 200, 300, 50);
 		checkPackages.setBackground(new Color(0, 0, 102));
 		checkPackages.setForeground(Color.WHITE);
 		checkPackages.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		checkPackages.addActionListener(this);
 		checkPackages.setMargin(new Insets(0, 0, 0, 110));
 		p2.add(checkPackages);
 
@@ -160,7 +162,7 @@ public class Dashboard extends JFrame implements ActionListener {
 		aboutUs.setMargin(new Insets(0, 0, 0, 175));
 		p2.add(aboutUs);
 
-		ImageIcon i4 = new ImageIcon("E:/Workspace/TravelManagementSystem/src/icons/home.jpg");
+		ImageIcon i4 = new ImageIcon("E:/Workspace/TourSync/TravelManagementSystem/src/icons/home.jpg");
 		Image i5 = i4.getImage().getScaledInstance(1650, 1000, Image.SCALE_DEFAULT);
 		ImageIcon i6 = new ImageIcon(i5);
 		JLabel img2 = new JLabel(i6);
@@ -181,10 +183,15 @@ public class Dashboard extends JFrame implements ActionListener {
 			new AddCustomer(username);
 		} else if (ae.getSource() == viewPersonalDetails) {
 			new ViewDetails(username);
+		} else if (ae.getSource() == updatePersonalDetails) {
+			new UpdateCustomerDetails(username);
+		}
+		else if(ae.getSource() == checkPackages) {
+			new ViewPackages();
 		}
 	}
 
 	public static void main(String args[]) {
-		new Dashboard("");
+		new Dashboard("pgupta");
 	}
 }

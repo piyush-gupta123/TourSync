@@ -114,7 +114,7 @@ public class AddCustomer extends JFrame implements ActionListener {
 		back.addActionListener(this);
 		add(back);
 
-		ImageIcon i1 = new ImageIcon("E:/Workspace/TravelManagementSystem/src/icons/newcustomer.jpg");
+		ImageIcon i1 = new ImageIcon("E:/Workspace/TourSync/TravelManagementSystem/src/icons/newcustomer.jpg");
 		Image i2 = i1.getImage().getScaledInstance(400, 500, Image.SCALE_DEFAULT);
 		ImageIcon i3 = new ImageIcon(i2);
 		JLabel image = new JLabel(i3);
@@ -123,7 +123,7 @@ public class AddCustomer extends JFrame implements ActionListener {
 
 		try {
 			Conn c = new Conn();
-			ResultSet rs = c.s.executeQuery("select * from account where username = 'pgupta'");
+			ResultSet rs = c.s.executeQuery("select * from account where username = '"+username+"'");
 			while (rs.next()) {
 				labelUsername.setText(rs.getString("username"));
 				labelname.setText(rs.getString("name"));

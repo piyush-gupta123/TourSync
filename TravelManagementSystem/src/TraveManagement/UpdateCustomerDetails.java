@@ -109,7 +109,7 @@ public class UpdateCustomerDetails extends JFrame implements ActionListener {
 		back.addActionListener(this);
 		add(back);
 
-		ImageIcon i1 = new ImageIcon("E:/Workspace/TravelManagementSystem/src/icons/update.png");
+		ImageIcon i1 = new ImageIcon("E:/Workspace/TourSync/TravelManagementSystem/src/icons/update.png");
 		Image i2 = i1.getImage().getScaledInstance(400, 300, Image.SCALE_DEFAULT);
 		ImageIcon i3 = new ImageIcon(i2);
 		JLabel image = new JLabel(i3);

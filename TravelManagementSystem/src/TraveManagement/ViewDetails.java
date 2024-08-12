@@ -95,14 +95,14 @@ public class ViewDetails extends JFrame implements ActionListener {
 		back.addActionListener(this);
 		add(back);
 
-		ImageIcon i1 = new ImageIcon("E:/Workspace/TravelManagementSystem/src/icons/viewall.jpg");
+		ImageIcon i1 = new ImageIcon("E:/Workspace/TourSync/TravelManagementSystem/src/icons/viewall.jpg");
 		Image i2 = i1.getImage().getScaledInstance(600, 200, Image.SCALE_DEFAULT);
 		ImageIcon i3 = new ImageIcon(i2);
 		JLabel img = new JLabel(i3);
 		img.setBounds(20, 400, 600, 200);
 		add(img);
 
-		ImageIcon i4 = new ImageIcon("E:/Workspace/TravelManagementSystem/src/icons/viewall.jpg");
+		ImageIcon i4 = new ImageIcon("E:/Workspace/TourSync/TravelManagementSystem/src/icons/viewall.jpg");
 		Image i5 = i4.getImage().getScaledInstance(600, 200, Image.SCALE_DEFAULT);
 		ImageIcon i6 = new ImageIcon(i5);
 		JLabel img2 = new JLabel(i6);
