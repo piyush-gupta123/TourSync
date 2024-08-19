@@ -3,8 +3,8 @@ package TraveManagement;
 import javax.swing.*;
 import java.awt.*;
 
-public class ViewPackages extends JFrame {
-	ViewPackages() {
+public class CheckPackage extends JFrame {
+	CheckPackage() {
 		setBounds(450, 200, 900, 600);
 		String[] package1 = { "GOLD PACKAGE", "6 Days and 7 Nights", "Airport Assistance", "Half Day City Tour",
 				"Daily Buffet", "Welcome Drinks on Arrival", "Full Day 3 Island Cruise", "English Speaking Guide",
@@ -115,6 +115,6 @@ public class ViewPackages extends JFrame {
 	}
 
 	public static void main(String args[]) {
-		new ViewPackages();
+		new CheckPackage();
 	}
 }
