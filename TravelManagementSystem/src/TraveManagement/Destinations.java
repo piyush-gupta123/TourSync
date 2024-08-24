@@ -3,13 +3,13 @@ package TraveManagement;
 import javax.swing.*;
 import java.awt.*;
 
-public class CheckHotels extends JFrame implements Runnable {
+public class Destinations extends JFrame implements Runnable {
 	Thread t1;
 	JLabel caption;
 	JLabel l1, l2, l3, l4, l5, l6, l7, l8, l9, l10;
 	JLabel jlabel[] = new JLabel[] { l1, l2, l3, l4, l5, l6, l7, l8, l9, l10 };
 
-	CheckHotels() {
+	Destinations() {
 		setBounds(500, 200, 800, 600);
 		caption = new JLabel();
 		caption.setBounds(50, 500, 1000, 70);
@@ -29,7 +29,7 @@ public class CheckHotels extends JFrame implements Runnable {
 		ImageIcon kimage[] = new ImageIcon[] { k1, k2, k3, k4, k5, k6, k7, k8, k9, k10 };
 
 		for (int i = 0; i < 10; i++) {
-			image[i] = new ImageIcon("E:/Workspace/TourSync/TravelManagementSystem/src/icons/hotel" + (i + 1) + ".jpg");
+			image[i] = new ImageIcon("E:/Workspace/TourSync/TravelManagementSystem/src/icons/dest" + (i + 1) + ".jpg");
 			jimage[i] = image[i].getImage().getScaledInstance(800, 600, Image.SCALE_DEFAULT);
 			kimage[i] = new ImageIcon(jimage[i]);
 			jlabel[i] = new JLabel(kimage[i]);
@@ -44,13 +44,13 @@ public class CheckHotels extends JFrame implements Runnable {
 	}
 
 	public void run() {
-		String hotels[] = new String[] { "JW Marriot Hotel", "Mandarin Oriental Hotel", "Four Seasons Hotel",
-				"Raddison Blue hotel", "Classio Hotel", "The Bay Club Hotel", "Clarks Inn", "Taj Hotel",
-				"Morning Star Motel", "River View Hotel" };
+//		String hotels[] = new String[] { "JW Marriot Hotel", "Mandarin Oriental Hotel", "Four Seasons Hotel",
+//				"Raddison Blue hotel", "Classio Hotel", "The Bay Club Hotel", "Clarks Inn", "Taj Hotel",
+//				"Morning Star Motel", "River View Hotel" };
 		try {
 			for (int i = 0; i < 100; i++) {
 				jlabel[i % 9].setVisible(true);
-				caption.setText(hotels[i % 9]);
+//				caption.setText(hotels[i % 9]);
 				Thread.sleep(2500);
 				jlabel[i % 9].setVisible(false);
 			}
@@ -61,6 +61,6 @@ public class CheckHotels extends JFrame implements Runnable {
 	}
 
 	public static void main(String args[]) {
-		new CheckHotels();
+		new Destinations();
 	}
 }
