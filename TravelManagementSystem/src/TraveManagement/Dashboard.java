@@ -7,7 +7,7 @@ import java.awt.*;
 public class Dashboard extends JFrame implements ActionListener {
 	String username;
 	JButton addPersonalDetails, viewPersonalDetails, updatePersonalDetails, checkPackages, bookPackage, viewPackage,
-			viewHotels, destinations, bookHotel, viewBookedHotel;
+			viewHotels, destinations, bookHotel, viewBookedHotel, payments;
 
 	Dashboard(String username) {
 		this.username = username;
@@ -137,12 +137,13 @@ public class Dashboard extends JFrame implements ActionListener {
 		destinations.addActionListener(this);
 		p2.add(destinations);
 
-		JButton payments = new JButton("Payments");
+		payments = new JButton("Payments");
 		payments.setBounds(0, 550, 300, 50);
 		payments.setBackground(new Color(0, 0, 102));
 		payments.setForeground(Color.WHITE);
 		payments.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		payments.setMargin(new Insets(0, 0, 0, 155));
+		payments.addActionListener(this);
 		p2.add(payments);
 
 		JButton calculator = new JButton("Calculator");
@@ -206,6 +207,8 @@ public class Dashboard extends JFrame implements ActionListener {
 			new BookHotel(username);
 		} else if (ae.getSource() == viewBookedHotel) {
 			new ViewBookedHotel(username);
+		} else if(ae.getSource() == payments) {
+			new Payment();
 		}
 
 	}
