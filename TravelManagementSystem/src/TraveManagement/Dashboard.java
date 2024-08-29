@@ -7,7 +7,8 @@ import java.awt.*;
 public class Dashboard extends JFrame implements ActionListener {
 	String username;
 	JButton addPersonalDetails, viewPersonalDetails, updatePersonalDetails, checkPackages, bookPackage, viewPackage,
-			viewHotels, destinations, bookHotel, viewBookedHotel, payments;
+			viewHotels, destinations, bookHotel, viewBookedHotel, payments, notepad, calculator, aboutUs,
+			deletePersonalDetails;
 
 	Dashboard(String username) {
 		this.username = username;
@@ -66,12 +67,13 @@ public class Dashboard extends JFrame implements ActionListener {
 		viewPersonalDetails.addActionListener(this);
 		p2.add(viewPersonalDetails);
 
-		JButton deletePersonalDetails = new JButton("Delete Personal Details");
+		deletePersonalDetails = new JButton("Delete Personal Details");
 		deletePersonalDetails.setBounds(0, 150, 300, 50);
 		deletePersonalDetails.setBackground(new Color(0, 0, 102));
 		deletePersonalDetails.setForeground(Color.WHITE);
 		deletePersonalDetails.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		deletePersonalDetails.setMargin(new Insets(0, 0, 0, 40));
+		deletePersonalDetails.addActionListener(this);
 		p2.add(deletePersonalDetails);
 
 		checkPackages = new JButton("Check Packages");
@@ -146,28 +148,31 @@ public class Dashboard extends JFrame implements ActionListener {
 		payments.addActionListener(this);
 		p2.add(payments);
 
-		JButton calculator = new JButton("Calculator");
+		calculator = new JButton("Calculator");
 		calculator.setBounds(0, 600, 300, 50);
 		calculator.setBackground(new Color(0, 0, 102));
 		calculator.setForeground(Color.WHITE);
 		calculator.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		calculator.setMargin(new Insets(0, 0, 0, 145));
+		calculator.addActionListener(this);
 		p2.add(calculator);
 
-		JButton notepad = new JButton("Notepad");
+		notepad = new JButton("Notepad");
 		notepad.setBounds(0, 650, 300, 50);
 		notepad.setBackground(new Color(0, 0, 102));
 		notepad.setForeground(Color.WHITE);
 		notepad.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		notepad.setMargin(new Insets(0, 0, 0, 155));
+		notepad.addActionListener(this);
 		p2.add(notepad);
 
-		JButton aboutUs = new JButton("About");
+		aboutUs = new JButton("About");
 		aboutUs.setBounds(0, 700, 300, 50);
 		aboutUs.setBackground(new Color(0, 0, 102));
 		aboutUs.setForeground(Color.WHITE);
 		aboutUs.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		aboutUs.setMargin(new Insets(0, 0, 0, 175));
+		aboutUs.addActionListener(this);
 		p2.add(aboutUs);
 
 		ImageIcon i4 = new ImageIcon("E:/Workspace/TourSync/TravelManagementSystem/src/icons/home.jpg");
@@ -207,8 +212,24 @@ public class Dashboard extends JFrame implements ActionListener {
 			new BookHotel(username);
 		} else if (ae.getSource() == viewBookedHotel) {
 			new ViewBookedHotel(username);
-		} else if(ae.getSource() == payments) {
+		} else if (ae.getSource() == payments) {
 			new Payment();
+		} else if (ae.getSource() == calculator) {
+			try {
+				Runtime.getRuntime().exec("calc.exe");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (ae.getSource() == notepad) {
+			try {
+				Runtime.getRuntime().exec("notepad.exe");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (ae.getSource() == aboutUs) {
+			new About();
+		} else if (ae.getSource() == deletePersonalDetails) {
+			new DeleteDetails(username);
 		}
 
 	}
